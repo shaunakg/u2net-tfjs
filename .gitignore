@@ -1,3 +1,11 @@
 /node_modules
 node_modules/
 __pycache__/
+
+bin/
+lib/
+
+*.onnx
+*.pth
+
+share/

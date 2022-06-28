@@ -1,21 +1,18 @@
-import os
 import glob
+import os
+
 import torch
 from torch.autograd import Variable
-
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import DataLoader, Dataset
 from torchvision import transforms
 
-from data_loader import RescaleT
-from data_loader import ToTensor
-from data_loader import ToTensorLab
-from data_loader import SalObjDataset
+from data_loader import RescaleT, SalObjDataset, ToTensor, ToTensorLab
+from model import U2NET  # full size version 173.6 MB
+from model import U2NETP  # small version u2net 4.7 MB
 
-from model import U2NET # full size version 173.6 MB
-from model import U2NETP # small version u2net 4.7 MB
 
 def main():
-    model_name='u2netp'
+    model_name='u2net'
 
     model_dir = os.path.join(os.getcwd(), 'saved_models', model_name, model_name + '.pth')
     image_dir = os.path.join(os.getcwd(), 'test_data', 'test_images')
